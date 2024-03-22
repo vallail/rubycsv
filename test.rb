@@ -6,8 +6,6 @@ end
 class State < CSVFileReader
 end
 
-class Country < CSVFileReader
-end
 
 st = State.new
 st.name = "Bihar"
@@ -27,4 +25,110 @@ s.subject = "Physics"
 s1 = Student.find_by("student_id", 3)
 puts s1.student_name # this should print kiran
 puts s1.teacher_name # this should print manoj
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
