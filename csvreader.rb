@@ -39,6 +39,8 @@ class CSVFileReader
   end
 end
 
+class Country < CSVFileReader
+end
 # Usage example for Student
 class Student < CSVFileReader
 end
