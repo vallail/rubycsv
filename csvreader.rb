@@ -28,7 +28,7 @@ class CSVFileReader
 
     def find_by(attribute, value)
       read_csv if data.nil? || data.empty?
-      data.map { |row| new(row) }.find { |record| record.send(attribute) == value }
+      data.map { |row| new(row) }.find { |record| record.send(attribute).to_s == value.to_s }
     end
   end
 
@@ -49,7 +49,7 @@ s.student_name = "Amit"
 s.teacher_name = "Shilesh"
 s.subject = "Physics"
 
-s1 = Student.find_by(:student_id, "3")
+s1 = Student.find_by("student_id", 3)
 puts s1.student_name  # Output should be "kiran"
 puts s1.teacher_name  # Output should be "manoj"
 
@@ -62,6 +62,6 @@ st.name = "Bihar"
 st.capital = "Patna"
 st.population = "22Crore"
 
-st1 = State.find_by(:name, "Karnataka")
+st1 = State.find_by("name", "Karnataka")
 puts st1.capital     # Output should be "bangalore"
 puts st1.population  # Output should be "6crore"
