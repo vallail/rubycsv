@@ -28,7 +28,7 @@ class CSVFileReader
 
     def find_by(attribute, value)
       read_csv if data.nil? || data.empty?
-      data.map { |row| new(row) }.find { |record| record.send(attribute) == value }
+      data.map { |row| new(row) }.find { |record| record.send(attribute).to_s == value.to_s }
     end
   end
 
@@ -39,29 +39,33 @@ class CSVFileReader
   end
 end
 
-# Usage example for Student
-class Student < CSVFileReader
-end
+# #usage case for country
+# class Country < CSVFileReader
+# end
 
-s = Student.new
-s.student_id = 10
-s.student_name = "Amit"
-s.teacher_name = "Shilesh"
-s.subject = "Physics"
+# # Usage example for Student
+# class Student < CSVFileReader
+# end
 
-s1 = Student.find_by(:student_id, "3")
-puts s1.student_name  # Output should be "kiran"
-puts s1.teacher_name  # Output should be "manoj"
+# s = Student.new
+# s.student_id = 10
+# s.student_name = "Amit"
+# s.teacher_name = "Shilesh"
+# s.subject = "Physics"
 
-# Usage example for State
-class State < CSVFileReader
-end
+# s1 = Student.find_by("student_id", 3)
+# puts s1.student_name  # Output should be "kiran"
+# puts s1.teacher_name  # Output should be "manoj"
 
-st = State.new
-st.name = "Bihar"
-st.capital = "Patna"
-st.population = "22Crore"
+# # Usage example for State
+# class State < CSVFileReader
+# end
 
-st1 = State.find_by(:name, "Karnataka")
-puts st1.capital     # Output should be "bangalore"
-puts st1.population  # Output should be "6crore"
+# st = State.new
+# st.name = "Bihar"
+# st.capital = "Patna"
+# st.population = "22Crore"
+
+# st1 = State.find_by("name", "Karnataka")
+# puts st1.capital     # Output should be "bangalore"
+# puts st1.population  # Output should be "6crore"
